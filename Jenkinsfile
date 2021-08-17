@@ -57,7 +57,7 @@ pipeline {
         stage ("deploy") {
             steps {
                 script {
-                    if ( "${git_branch}" != 'master') {
+                    if ( "${git_branch}" == 'master') {
                         println "this is  master"
                     }
                     else if ("${git_branch}" == 'INT') {
