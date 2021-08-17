@@ -57,12 +57,12 @@ pipeline {
         stage ("deploy") {
             steps {
                 script {
-                    if ( "${git_branch}" == 'master') {
+                    if ( "${git_branch}" != 'master') {
                         println "this is  master"
                     }
                     else if ("${git_branch}" == 'INT') {
                         println "this is int"
- ii                     
+                      
                     }
                     else if ( "${git_branch}" == "UAT") {
                         println "this is UAT"
@@ -78,3 +78,4 @@ pipeline {
         }
     }
 }
+
